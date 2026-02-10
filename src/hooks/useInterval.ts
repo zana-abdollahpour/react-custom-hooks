@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useEffectEvent, useRef } from "react";
 
-export function useInterval<TArgs extends [], TReturn>(
-  cb: (...args: TArgs) => TReturn,
+export function useInterval(
+  cb: <TArgs extends [], TReturn>(...args: TArgs) => TReturn,
   interval: number,
 ) {
   const onInterval = useEffectEvent(cb);
